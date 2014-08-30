@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :recepis
+  resources :recipes
+
+  resources :house_works
 
   resources :work_logs
 

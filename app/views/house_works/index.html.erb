@@ -1,0 +1,27 @@
+<h1>Listing house_works</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Recipe</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @house_works.each do |house_work| %>
+      <tr>
+        <td><%= house_work.recepi.name %></td>
+        <td><%= house_work.name %></td>
+        <td><%= link_to 'Show', house_work %></td>
+        <td><%= link_to 'Edit', edit_house_work_path(house_work) %></td>
+        <td><%= link_to 'Destroy', house_work, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New House work', new_house_work_path %>

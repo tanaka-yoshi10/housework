@@ -11,9 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140830055608) do
+ActiveRecord::Schema.define(version: 20140830123559) do
+
+  create_table "house_works", force: true do |t|
+    t.integer  "recipe_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "house_works", ["recipe_id"], name: "index_house_works_on_recipe_id"
 
   create_table "recepis", force: true do |t|
+    t.string   "memo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recipes", force: true do |t|
     t.string   "memo"
     t.datetime "created_at"
     t.datetime "updated_at"
