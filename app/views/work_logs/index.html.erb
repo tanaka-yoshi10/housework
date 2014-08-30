@@ -1,0 +1,29 @@
+<h1>Listing work_logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Time result</th>
+      <th>Memo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @work_logs.each do |work_log| %>
+      <tr>
+        <td><%= work_log.user %></td>
+        <td><%= work_log.time_result %></td>
+        <td><%= work_log.memo %></td>
+        <td><%= link_to 'Show', work_log %></td>
+        <td><%= link_to 'Edit', edit_work_log_path(work_log) %></td>
+        <td><%= link_to 'Destroy', work_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Work log', new_work_log_path %>

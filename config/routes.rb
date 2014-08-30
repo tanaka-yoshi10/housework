@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :recepis
+
+  resources :work_logs
+
+  resources :users
+
   get 'static_pages/home'
 
   get 'static_pages/help'

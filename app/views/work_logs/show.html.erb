@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @work_log.user %>
+</p>
+
+<p>
+  <strong>Time result:</strong>
+  <%= @work_log.time_result %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @work_log.memo %>
+</p>
+
+<%= link_to 'Edit', edit_work_log_path(@work_log) %> |
+<%= link_to 'Back', work_logs_path %>
