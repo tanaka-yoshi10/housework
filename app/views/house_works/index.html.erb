@@ -12,7 +12,7 @@
   <tbody>
     <% @house_works.each do |house_work| %>
       <tr>
-        <td><%= house_work.recepi.name %></td>
+        <td><%= house_work.recipe %></td>
         <td><%= house_work.name %></td>
         <td><%= link_to 'Show', house_work %></td>
         <td><%= link_to 'Edit', edit_house_work_path(house_work) %></td>
