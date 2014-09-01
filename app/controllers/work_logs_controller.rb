@@ -69,6 +69,6 @@ class WorkLogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def work_log_params
-      params.require(:work_log).permit(:user_id, :time_result, :memo)
+      params.require(:work_log).permit(:user_id, :time_result, :memo, :house_work_id, :completed)
     end
 end

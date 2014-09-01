@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140830123559) do
+ActiveRecord::Schema.define(version: 20140901132059) do
 
   create_table "house_works", force: true do |t|
     t.integer  "recipe_id"
@@ -47,8 +47,11 @@ ActiveRecord::Schema.define(version: 20140830123559) do
     t.string   "memo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "house_work_id"
+    t.date     "completed"
   end
 
+  add_index "work_logs", ["house_work_id"], name: "index_work_logs_on_house_work_id"
   add_index "work_logs", ["user_id"], name: "index_work_logs_on_user_id"
 
 end

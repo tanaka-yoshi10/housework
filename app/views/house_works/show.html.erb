@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Recipe:</strong>
-  <%= @house_work.recipe %>
-</p>
+<h1><%= @house_work.name %></h1>
 
 <p>
-  <strong>Name:</strong>
-  <%= @house_work.name %>
+  <%= link_to 'レシピ' , @house_work.recipe %>
 </p>
+
+<% WorkLog.where(house_work_id: @house_work.id).each do |worklog| %>
+  <p> <%= worklog.completed %> <%= worklog.user.name %> </p>
+<% end %>
 
 <%= link_to 'Edit', edit_house_work_path(@house_work) %> |
 <%= link_to 'Back', house_works_path %>
