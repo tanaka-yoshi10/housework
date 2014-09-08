@@ -10,5 +10,25 @@
   <p> <%= worklog.completed %> <%= worklog.user.name %> </p>
 <% end %>
 
+<table border=2>
+  <tr>
+    <th>実施者</th>
+    <% date = Date.today %>
+    <% date.beginning_of_month.upto(date.end_of_month) do |day| %>
+      <th><%= day %></th>
+    <% end %>
+  </tr>
+
+  <% User.all.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <% date = Date.today %>
+      <% date.beginning_of_month.upto(date.end_of_month) do |day| %>
+        <td></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
 <%= link_to 'Edit', edit_house_work_path(@house_work) %> |
 <%= link_to 'Back', house_works_path %>
