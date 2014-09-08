@@ -2,11 +2,14 @@ require 'rails_helper'
 
 describe "Static pages" do
 
-  describe "Home page" do
+  subject { page }
 
-    it "should have the content 'Sample App'" do
-      visit '/static_pages/home'
-      expect(page).to have_content('Sample App')
-    end
+  describe "Home page" do
+    before { visit '/static_pages/home' }
+
+    it { should have_content('House Work') }
+    it { should have_title("House Work | Home") }
+    it { should have_link('家事一覧', href: house_works_path)}
+
   end
 end

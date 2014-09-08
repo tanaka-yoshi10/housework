@@ -1,6 +1,14 @@
-<h1>Sample App</h1>
-<p>
-    This is the home page for the
-  <a href="http://railstutorial.jp/">Ruby on Rails Tutorial</a>
-    sample application.
-</p>
+<% provide(:title, 'Home') %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>House Work | <%= yield(:title) %></title>
+  </head>
+  <body>
+    <h1>House Work</h1>
+    <p>
+        家事を最適化しよう
+    </p>
+    <%= link_to '家事一覧', house_works_path %>
+  </body>
+</html>
