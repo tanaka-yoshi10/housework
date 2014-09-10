@@ -23,7 +23,8 @@
       <% date = Date.today %>
       <% date.beginning_of_month.upto(date.end_of_month) do |day| %>
         <td>
-          <%= WorkLog.where(user: user, completed: day).inject(0){|s, worklog| s += worklog.time_result} %>
+          <% sum = WorkLog.where(user: user, completed: day).inject(0){|s, worklog| s += worklog.time_result} %>
+          <%= sum if sum != 0%>
         </td>
       <% end %>
     </tr>
