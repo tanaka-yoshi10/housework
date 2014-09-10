@@ -38,3 +38,6 @@ group :production do
   gem 'pg'
   gem 'rails_12factor' # ??
 end
+
+gem 'bootstrap-sass', '2.3.2.0'
+gem 'sprockets', '2.11.0'
