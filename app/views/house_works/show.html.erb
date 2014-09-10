@@ -6,10 +6,6 @@
   <%= link_to 'レシピ' , @house_work.recipe %>
 </p>
 
-<% @house_work.work_logs.each do |worklog| %>
-  <p> <%= worklog.completed %> <%= worklog.user.name %> </p>
-<% end %>
-
 <table border=2>
   <tr>
     <th>実施者</th>
@@ -24,7 +20,9 @@
       <td><%= user.name %></td>
       <% date = Date.today %>
       <% date.beginning_of_month.upto(date.end_of_month) do |day| %>
-        <td></td>
+        <td>
+          <%= WorkLog.where(user: user, completed: day).inject(0){|s, worklog| s += worklog.time_result} %>
+        </td>
       <% end %>
     </tr>
   <% end %>
