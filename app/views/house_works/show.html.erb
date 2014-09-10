@@ -6,7 +6,7 @@
   <%= link_to 'レシピ' , @house_work.recipe %>
 </p>
 
-<% WorkLog.where(house_work_id: @house_work.id).each do |worklog| %>
+<% @house_work.work_logs.each do |worklog| %>
   <p> <%= worklog.completed %> <%= worklog.user.name %> </p>
 <% end %>
 
