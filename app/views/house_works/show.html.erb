@@ -6,12 +6,14 @@
   <%= link_to 'レシピ' , @house_work.recipe %>
 </p>
 
+<% date = Date.today %>
+<%= date.strftime('%Y/%m') %>
+
 <table border=2>
   <tr>
     <th>実施者</th>
-    <% date = Date.today %>
     <% date.beginning_of_month.upto(date.end_of_month) do |day| %>
-      <th><%= day %></th>
+      <th><%= day.strftime('%d') %></th>
     <% end %>
   </tr>
 
