@@ -10,10 +10,11 @@
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
-          sample app
+          <%= link_to "家事最適化", root_path %>
           <nav>
             <ul class="nav pull-right">
-              <li>Home</li>
+              <li><%= link_to "家事一覧", house_works_path %></li>
+              <li><%= link_to "実施結果一覧", work_logs_path %></li>
             </ul>
           </nav>
         </div>
