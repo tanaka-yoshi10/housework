@@ -23,8 +23,9 @@
       <% date = Date.today %>
       <% date.beginning_of_month.upto(date.end_of_month) do |day| %>
         <td>
-          <% sum = WorkLog.where(user: user, completed: day, house_work_id: @house_work).inject(0){|s, worklog| s += worklog.time_result} %>
-          <%= sum if sum != 0%>
+          <% WorkLog.where(user: user, completed: day, house_work_id: @house_work).each do |worklog|%>
+            <%= link_to worklog.time_result, worklog %>
+          <% end %>
         </td>
       <% end %>
     </tr>
