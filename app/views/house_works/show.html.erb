@@ -19,7 +19,7 @@
 
   <% User.all.each do |user| %>
     <tr>
-      <td><%= user.name %></td>
+      <td><%= link_to user.name, user %></td>
       <% date = Date.today %>
       <% date.beginning_of_month.upto(date.end_of_month) do |day| %>
         <td>
