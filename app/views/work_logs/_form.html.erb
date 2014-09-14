@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :house_work_id %><br>
+    <%= f.label :house_work_id, "家事" %><br>
     <%= f.collection_select(:house_work_id, HouseWork.all, :id, :name) %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
+    <%= f.label :user_id, "作業者" %><br>
     <%= f.collection_select(:user_id, User.all, :id, :name) %>
   </div>
   <div class="field">
-    <%= f.label :completed %><br>
+    <%= f.label :completed, "作業日" %><br>
     <%= f.date_field :completed, value: Date.today %>
   </div>
   <div class="field">
-    <%= f.label :time_result %><br>
+    <%= f.label :time_result, "作業時間(分)" %><br>
     <%= f.text_field :time_result %>
   </div>
   <div class="field">
-    <%= f.label :memo %><br>
     <%= f.text_field :memo %>
+    <%= f.label :memo, "気付き" %><br>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit '記録' %>
   </div>
 <% end %>
