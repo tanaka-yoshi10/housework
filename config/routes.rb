@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-  resources :recipes
   resources :house_works
   resources :work_logs
   resources :users
