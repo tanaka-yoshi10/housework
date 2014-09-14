@@ -69,6 +69,6 @@ class HouseWorksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def house_work_params
-      params.require(:house_work).permit(:recipe_id, :name)
+      params.require(:house_work).permit(:memo, :name)
     end
 end

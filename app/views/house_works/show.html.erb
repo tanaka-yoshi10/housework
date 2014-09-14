@@ -2,10 +2,6 @@
 
 <h1><%= @house_work.name %></h1>
 
-<p>
-  <%= link_to 'レシピ' , @house_work.recipe %>
-</p>
-
 <% date = Date.today %>
 <%= date.strftime('%Y/%m') %>
 
@@ -31,6 +27,9 @@
     </tr>
   <% end %>
 </table>
+
+<h2>レシピ</h2>
+<%= simple_format @house_work.memo %>
 
 <%= link_to 'Edit', edit_house_work_path(@house_work) %> |
 <%= link_to 'Back', house_works_path %>
