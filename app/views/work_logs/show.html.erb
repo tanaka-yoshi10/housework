@@ -17,7 +17,7 @@
 
 <p>
   <strong>Memo:</strong>
-  <%= @work_log.memo %>
+  <%= simple_format(@work_log.memo) %>
 </p>
 
 <%= link_to 'Edit', edit_work_log_path(@work_log) %> |

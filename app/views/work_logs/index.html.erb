@@ -15,7 +15,7 @@
       <tr>
         <td><%= link_to work_log.user.name, work_log.user %></td>
         <td><%= work_log.time_result %></td>
-        <td><%= work_log.memo %></td>
+        <td><%= simple_format(work_log.memo) %></td>
         <td><%= link_to 'Show', work_log %></td>
         <td><%= link_to 'Edit', edit_work_log_path(work_log) %></td>
         <td><%= link_to 'Destroy', work_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
