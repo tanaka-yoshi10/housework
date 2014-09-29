@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
+  <strong>実施者:</strong>
   <%= link_to @work_log.user.name, @work_log.user %>
 </p>
 
 <p>
-  <strong>Completed date:</strong>
+  <strong>完了日:</strong>
   <%= @work_log.completed %>
 </p>
 
 <p>
-  <strong>Time result:</strong>
+  <strong>作業時間(分):</strong>
   <%= @work_log.time_result %>
 </p>
 
 <p>
-  <strong>Memo:</strong>
+  <strong>メモ:</strong>
   <%= simple_format(@work_log.memo) %>
 </p>
 
-<%= link_to 'Edit', edit_work_log_path(@work_log) %> |
-<%= link_to 'Back', work_logs_path %>
+<%= link_to '修正', edit_work_log_path(@work_log) %> |
+<%= link_to '戻る', work_logs_path %>
